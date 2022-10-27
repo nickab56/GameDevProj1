@@ -5,11 +5,11 @@ using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 6f;
     public Vector2 direction;
     public float halfHeight = 64; //this depends on our texture size
     public float halfWidth = 64; // this depends on your texture size
-
+    
     private float localSpeed = 0;
 
 
@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
             localSpeed += speed;
         }
 
-        if (Input.GetKey(KeyCode.D) && !blockMovingRight || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.D) && !blockMovingRight || Input.GetKey(KeyCode.RightArrow))
         {
             direction.x = 1;
             localSpeed += speed;
@@ -77,7 +77,7 @@ public class PlayerMove : MonoBehaviour
             localSpeed += speed;
         }
 
-        if (Input.GetKey(KeyCode.A) && !blockMovingLeft || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.A) && !blockMovingLeft || Input.GetKey(KeyCode.LeftArrow))
         {
             direction.x = -1;
             localSpeed += speed;
@@ -86,6 +86,26 @@ public class PlayerMove : MonoBehaviour
         if (direction != Vector2.zero)
         {
             direction.Normalize();
+        }
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        {
+            localSpeed *= .75f;
+        }
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        {
+            localSpeed *= .75f;
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        {
+            localSpeed *= .75f;
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        {
+            localSpeed *= .75f;
         }
 
 
@@ -101,5 +121,11 @@ public class PlayerMove : MonoBehaviour
         GameObject gameObject = collision.gameObject;
         Debug.Log(gameObject.tag);
     }
+
+    private void dodge()
+    {
+
+    }
+
 }
 
