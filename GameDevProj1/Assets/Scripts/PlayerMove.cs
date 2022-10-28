@@ -9,8 +9,11 @@ public class PlayerMove : MonoBehaviour
     public Vector2 direction;
     public float halfHeight = 64; //this depends on our texture size
     public float halfWidth = 64; // this depends on your texture size
-    
+    public float coolDownTime = 0.1f;
+    public GameObject Player;
+
     private float localSpeed = 0;
+    private bool inCoolDown = false;
 
 
     // Start is called before the first frame update
@@ -23,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         move();
+        dodge();
     }
     private void move()
     {
@@ -124,7 +128,35 @@ public class PlayerMove : MonoBehaviour
 
     private void dodge()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (Input.GetKey(KeyCode.D))
+            Player.transform.position = new Vector3(Player.transform.position.x + 3f, Player.transform.position.y);
 
+            if (Input.GetKey(KeyCode.A))
+                Player.transform.position = new Vector3(Player.transform.position.x + -3f, Player.transform.position.y);
+
+            if (Input.GetKey(KeyCode.W))
+                Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 3f);
+
+            if (Input.GetKey(KeyCode.S))
+                Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + -3f);
+
+        }
+        StartCoroutine(CoolDown());
+    }
+
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(coolDownTime);
+        inCoolDown = false;
+
+    }
+    
+    IEnumerator DoDodge()
+    {
+        direction.x += 0.25f;
+        yield return new WaitForSeconds(0.5f);
     }
 
 }
