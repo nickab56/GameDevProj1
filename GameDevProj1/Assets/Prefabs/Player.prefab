@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5847864817927035225}
   - component: {fileID: 5847864817927035224}
   - component: {fileID: 4915606284370489040}
+  - component: {fileID: -8341705821448405970}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -135,7 +136,7 @@ MonoBehaviour:
   halfHeight: 64
   halfWidth: 64
   coolDownTime: 0.1
-  Player: {fileID: 0}
+  Player: {fileID: 5847864817927035231}
 --- !u!114 &4915606284370489040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +149,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6098f58ea2617b64584fbb2c64172d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 3178373329810395900, guid: 29d7b526b687be542bec787ab776fbb3, type: 3}
   shootPoint: {fileID: 2827594928853075163}
   coolDownTime: 0.5
+--- !u!114 &-8341705821448405970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5847864817927035231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 182cb263075708244963a1de296f6033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  lives: 3
