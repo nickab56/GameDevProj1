@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class ShootHB : MonoBehaviour
 {
     public GameObject Bullet;
     public GameObject shootPoint;
@@ -26,7 +26,7 @@ public class Shoot : MonoBehaviour
             //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
             go.transform.position = shootPoint.transform.position;
             go.transform.rotation = shootPoint.transform.rotation;
-            Bullet b = go.GetComponent<Bullet>();
+            BulletHB b = go.GetComponent<BulletHB>();
             b.speed = 10;
 
             StartCoroutine(CoolDown());

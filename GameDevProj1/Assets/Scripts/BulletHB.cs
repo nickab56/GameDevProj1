@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletHB : MonoBehaviour
 {
     public GameObject Asteroid;
     public GameObject bullet;
@@ -55,8 +55,6 @@ public class Bullet : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            GameObject g = Instantiate(collectable);
-            g.transform.position = new Vector3(Random.Range(-3, 3), 3, 0);
         }
         Destroy(this.gameObject);
     }

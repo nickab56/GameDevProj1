@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMoveNA : MonoBehaviour
 {
     public float speed = 6f;
     public Vector2 direction;
