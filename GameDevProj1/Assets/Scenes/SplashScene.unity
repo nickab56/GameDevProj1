@@ -200,8 +200,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 802455076}
-  - component: {fileID: 802455078}
   - component: {fileID: 802455077}
+  - component: {fileID: 802455078}
   m_Layer: 0
   m_Name: SplashSceneManager
   m_TagString: Untagged
