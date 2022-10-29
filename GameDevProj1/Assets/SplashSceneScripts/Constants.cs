@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Constants : MonoBehaviour
 {
+    public float timeCount = 0;
+    public float HighTime;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -8,6 +8,7 @@ TagManager:
   - ShootPoint
   - Bullet
   - Boss
+  - Manager
   layers:
   - Default
   - TransparentFX
