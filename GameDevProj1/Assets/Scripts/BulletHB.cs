@@ -49,7 +49,7 @@ public class BulletHB : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
         if (gameObject.tag == "Player")
@@ -57,5 +57,5 @@ public class BulletHB : MonoBehaviour
             Destroy(gameObject);
         }
         Destroy(this.gameObject);
-    }
+    }*/
 }

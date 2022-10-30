@@ -26,12 +26,15 @@ public class PlayerHealthSystemJA : MonoBehaviour
         {
             if (inCoolDown == false)
             {
-                inCoolDown = true;
-                health -= health;
                 StartCoroutine(CoolDown());
+                inCoolDown = true;
+                health--;
+                Debug.Log("Health" + health);
+                Debug.Log("Lives" + lives);
+                //StartCoroutine(CoolDown());
                 if (health == 0)
                 {
-                    lives -= lives;
+                    lives = lives - 1;
                     health = 3;
                 }
                 if (lives == 0)
@@ -39,8 +42,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
                     Debug.Log("GAME OVER");
                     //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
                 }
-                Debug.Log("Health" + health);
-                Debug.Log("Lives" + lives);
+                
             }
 
         }
@@ -49,7 +51,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         inCoolDown = false;
     }
 }
