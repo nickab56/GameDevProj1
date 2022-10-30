@@ -6,6 +6,7 @@ public class Constants : MonoBehaviour
 {
     public float timeCount = 0;
     public float HighTime;
+    public bool BossAlive = true;
 
     // Start is called before the first frame update
     void Start()

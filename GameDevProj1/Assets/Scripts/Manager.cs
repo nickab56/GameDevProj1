@@ -11,16 +11,13 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-
-        StartCoroutine(wait());
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        BossCheck();
     }
 
     private void Awake()
@@ -28,10 +25,16 @@ public class Manager : MonoBehaviour
 
     }
 
-
-    IEnumerator wait()
+    private void BossCheck()
     {
-        yield return new WaitForSeconds(5);
+        if (!Constants.C.BossAlive)
+            StartCoroutine(ChangeScene());
+    }
+
+
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(4);
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
     }
 }

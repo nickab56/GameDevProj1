@@ -23,8 +23,13 @@ public class BossHealthSystemJA : MonoBehaviour
         {
             health--;
             if (health == 0)
+            {
+                Constants.C.BossAlive = false;
                 Destroy(this.gameObject);
+            }
+
         }
 
     }
+
 }
