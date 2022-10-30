@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Manager
   - Wall
+  - Boundary
   layers:
   - Default
   - TransparentFX
