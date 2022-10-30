@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4471870115929972144}
   - component: {fileID: 1119321123298019322}
   m_Layer: 0
-  m_Name: Boundary
+  m_Name: LargeBoundary
   m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
