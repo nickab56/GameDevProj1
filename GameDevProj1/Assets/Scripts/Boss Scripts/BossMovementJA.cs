@@ -7,7 +7,6 @@ public class BossMovementJA : MonoBehaviour
     public float speed = 6f;
     public bool inCoolDown = false; 
     public Vector2 direction;
-    private float localSpeed = 0;
 
     private Vector2 rightEndpoint;
     // Start is called before the first frame update

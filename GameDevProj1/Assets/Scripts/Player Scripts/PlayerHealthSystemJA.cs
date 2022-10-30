@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealthSystemJA : MonoBehaviour
 {
@@ -9,12 +10,13 @@ public class PlayerHealthSystemJA : MonoBehaviour
     public int lives = 3;
     public GameObject heart3;
     public GameObject heart2;
+    public TMP_Text healthText;
 
     private bool inCoolDown = false;
 
     void Start()
     {
-        
+        healthText.text = "Health: 3";
     }
 
     void Update()
@@ -31,9 +33,9 @@ public class PlayerHealthSystemJA : MonoBehaviour
                 StartCoroutine(CoolDown());
                 inCoolDown = true;
                 health--;
+                healthText.text = "Health: " + health.ToString();
                 Debug.Log("Health" + health);
                 Debug.Log("Lives" + lives);
-                //StartCoroutine(CoolDown());
                 if (health == 0)
                 {
                     lives = lives - 1;
