@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class PlayerMoveNA : MonoBehaviour
 {
     public float speed = 6f;
-    public Vector2 direction;
+        public Vector2 direction;
     public float halfHeight = 64; //this depends on our texture size
     public float halfWidth = 64; // this depends on your texture size
     public float coolDownTime = 0.1f;

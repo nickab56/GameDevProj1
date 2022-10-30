@@ -27,6 +27,7 @@ public class BossHealthSystemJA : MonoBehaviour
                 Constants.C.BossAlive = false;
                 Destroy(this.gameObject);
             }
+            Destroy(gameObject);
 
         }
 
