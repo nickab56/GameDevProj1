@@ -7,6 +7,8 @@ public class PlayerHealthSystemJA : MonoBehaviour
 
     public int health = 3;
     public int lives = 3;
+    public GameObject heart3;
+    public GameObject heart2;
 
     private bool inCoolDown = false;
 
@@ -36,6 +38,14 @@ public class PlayerHealthSystemJA : MonoBehaviour
                 {
                     lives = lives - 1;
                     health = 3;
+                }
+                if (lives == 2)
+                {
+                    Destroy(heart3);
+                }
+                if (lives == 1)
+                {
+                    Destroy(heart3);
                 }
                 if (lives == 0)
                 {
