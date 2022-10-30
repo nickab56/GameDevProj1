@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Boss
   - Manager
+  - Wall
   layers:
   - Default
   - TransparentFX
