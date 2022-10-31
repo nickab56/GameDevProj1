@@ -36,7 +36,7 @@ public class TimerNA : MonoBehaviour
 
     private void OnDisable()
     {
-        if (time < pastTime)
+        if (time < pastTime && pastTime != 0)
         {
             PlayerPrefs.SetFloat(highScoreKey, time);
         }

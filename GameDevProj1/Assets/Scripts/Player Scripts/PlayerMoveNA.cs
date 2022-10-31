@@ -41,25 +41,25 @@ public class PlayerMoveNA : MonoBehaviour
 
         Vector2 currentPosition = Camera.main.WorldToScreenPoint(this.transform.position);
 
-        if ((currentPosition.x + halfWidth) > Screen.width)
-        {
-            blockMovingRight = true;
-        }
+        //if ((currentPosition.x + halfWidth) > Screen.width)
+        //{
+        //    blockMovingRight = true;
+        //}
 
-        if ((currentPosition.y + halfHeight) > Screen.height)
-        {
-            blockMovingUp = true;
-        }
+        //if ((currentPosition.y + halfHeight) > Screen.height)
+        //{
+        //    blockMovingUp = true;
+        //}
 
-        if ((currentPosition.x - halfWidth) < 0)
-        {
-            blockMovingLeft = true;
-        }
+        //if ((currentPosition.x - halfWidth) < 0)
+        //{
+        //    blockMovingLeft = true;
+        //}
 
-        if ((currentPosition.y - halfHeight) < 0)
-        {
-            blockMovingDown = true;
-        }
+        //if ((currentPosition.y - halfHeight) < 0)
+        //{
+        //    blockMovingDown = true;
+        //}
 
         if (Input.GetKey(KeyCode.W) && !blockMovingUp || Input.GetKey(KeyCode.UpArrow))
         {
