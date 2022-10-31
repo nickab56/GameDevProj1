@@ -16,10 +16,10 @@ public class PlayerMoveNA : MonoBehaviour
     private bool inCoolDown = false;
 
     // stop player at boundary
-    private bool blockMovingUp = false;
-    private bool blockMovingDown = false;
-    private bool blockMovingRight = false;
-    private bool blockMovingLeft = false;
+    public bool blockMovingUp = false;
+    public bool blockMovingDown = false;
+    public bool blockMovingRight = false;
+    public bool blockMovingLeft = false;
 
     // Start is called before the first frame update
     void Start()

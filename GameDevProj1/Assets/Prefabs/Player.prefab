@@ -330,6 +330,10 @@ MonoBehaviour:
   halfWidth: 64
   coolDownTime: 0.1
   Player: {fileID: 5847864817927035231}
+  blockMovingUp: 0
+  blockMovingDown: 0
+  blockMovingRight: 0
+  blockMovingLeft: 0
 --- !u!114 &4915606284370489040
 MonoBehaviour:
   m_ObjectHideFlags: 0
