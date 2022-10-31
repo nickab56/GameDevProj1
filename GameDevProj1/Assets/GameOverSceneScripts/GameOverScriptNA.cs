@@ -12,8 +12,8 @@ public class GameOverScriptNA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerTimeTxt.text = "Time: " + Constants.C.timeCount.ToString();
-        HighTimeTxt.text = "Best Time: " + Constants.C.HighTime.ToString();
+        PlayerTimeTxt.text = "Time: " + Constants.C.timeCount.ToString("0.00");
+        HighTimeTxt.text = "Best Time: " + Constants.C.HighTime.ToString("0.00");
     }
 
     // Update is called once per frame
