@@ -15,6 +15,11 @@ public class PlayerMoveNA : MonoBehaviour
     private float localSpeed = 0;
     private bool inCoolDown = false;
 
+    // stop player at boundary
+    private bool blockMovingUp = false;
+    private bool blockMovingDown = false;
+    private bool blockMovingRight = false;
+    private bool blockMovingLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +37,7 @@ public class PlayerMoveNA : MonoBehaviour
     {
         direction = Vector2.zero;
 
-        // stop player at boundary
-        bool blockMovingUp = false;
-        bool blockMovingDown = false;
-        bool blockMovingRight = false;
-        bool blockMovingLeft = false;
-
+        
 
         Vector2 currentPosition = Camera.main.WorldToScreenPoint(this.transform.position);
 
@@ -65,12 +65,14 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = 1;
             localSpeed += speed;
+            blockMovingDown = false;
         }
 
         if (Input.GetKey(KeyCode.D) && !blockMovingRight || Input.GetKey(KeyCode.RightArrow))
         {
             direction.x = 1;
             localSpeed += speed;
+            blockMovingLeft = false;
         }
 
 
@@ -79,12 +81,14 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = -1;
             localSpeed += speed;
+            blockMovingUp = false;
         }
 
         if (Input.GetKey(KeyCode.A) && !blockMovingLeft || Input.GetKey(KeyCode.LeftArrow))
         {
             direction.x = -1;
             localSpeed += speed;
+            blockMovingRight = false;
         }
 
         if (direction != Vector2.zero)
@@ -118,14 +122,38 @@ public class PlayerMoveNA : MonoBehaviour
         Vector3 newPositiion = new Vector3(localSpeed * direction.x * Time.deltaTime, localSpeed * direction.y * Time.deltaTime, 0); // could also use constructor and set each
         this.transform.position += newPositiion;
 
+        /*blockMovingUp = false;
+        blockMovingLeft = false;
+        blockMovingDown = false;
+        blockMovingRight = false;*/
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
         Debug.Log(gameObject.tag);
+        if (gameObject.tag == "Boundary")
+        {
+            if(collision.transform.position.x < this.transform.position.x)
+            {
+                blockMovingLeft = true;
+            }
+            if (collision.transform.position.x > this.transform.position.x)
+            {
+                blockMovingRight = true;
+            }
+            if (collision.transform.position.y < this.transform.position.y)
+            {
+                blockMovingDown = true;
+            }
+            if (collision.transform.position.y > this.transform.position.y)
+            {
+                blockMovingUp = true;
+            }
+        }
     }
-
+    
     private void dodge()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
