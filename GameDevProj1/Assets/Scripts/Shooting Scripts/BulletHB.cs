@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BulletHB : MonoBehaviour
 {
-    public GameObject Asteroid;
+    //public GameObject Asteroid;
     public GameObject bullet;
     public Vector2 direction;
-    public float speed = 8f;
+    public float speed = 10f;
 
     void Start()
     {
@@ -49,13 +49,13 @@ public class BulletHB : MonoBehaviour
 
 
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
-        if (gameObject.tag == "Player")
+        if (gameObject.tag == "Wall")
         {
-            Destroy(gameObject);
+            direction *= new Vector2(1, -1);
         }
-        Destroy(this.gameObject);
-    }*/
+       // Destroy(this.gameObject);
+    }
 }

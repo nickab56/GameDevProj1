@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossShootHB : MonoBehaviour
 {
-    public GameObject Bullet;
-    public GameObject shootPoint;     //Change to bossShootPoint
+    public GameObject Bullet;     //BossBullet   reflections, split, spread
+    public GameObject BossShootPoint;  
     public float coolDownTime = 1f;
 
     private bool inCoolDown = false;
@@ -18,16 +19,16 @@ public class BossShootHB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && !inCoolDown)
+        if (!inCoolDown)   //Input.GetKey(KeyCode.Space) (Input.GetMouseButtonDown(0))
         {
             inCoolDown = true;
 
-            GameObject go = Instantiate(Bullet);
+            GameObject go = Instantiate(Bullet);   //BossBullets
             //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
-            go.transform.position = shootPoint.transform.position;  //Change to bossShootPoint
-            go.transform.rotation = shootPoint.transform.rotation;  //Change to bossShootPoint
-            BulletHB b = go.GetComponent<BulletHB>();
-            b.speed = 10;
+            go.transform.position = BossShootPoint.transform.position;
+            go.transform.rotation = BossShootPoint.transform.rotation;
+            BulletHB b = go.GetComponent<BulletHB>();  //BossBullets
+            b.speed = 7;
 
             StartCoroutine(CoolDown());
         }

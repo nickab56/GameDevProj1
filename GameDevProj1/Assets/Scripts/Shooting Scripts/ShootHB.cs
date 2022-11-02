@@ -18,7 +18,7 @@ public class ShootHB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && !inCoolDown)
+        if (Input.GetMouseButtonDown(0) && !inCoolDown)
         {
             inCoolDown = true;
 

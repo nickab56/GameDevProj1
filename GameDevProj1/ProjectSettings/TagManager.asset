@@ -11,6 +11,8 @@ TagManager:
   - Manager
   - Wall
   - Boundary
+  - Heart1
+  - BossShootPoint
   layers:
   - Default
   - TransparentFX
