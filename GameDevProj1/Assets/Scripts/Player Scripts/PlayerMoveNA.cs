@@ -156,19 +156,23 @@ public class PlayerMoveNA : MonoBehaviour
     
     private void dodge()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !inCoolDown)
         {
             if (Input.GetKey(KeyCode.D))
-            Player.transform.position = new Vector3(Player.transform.position.x + 3f, Player.transform.position.y);
+                StartCoroutine(DoDodge());
+            //Player.transform.position = new Vector3(Player.transform.position.x + 3f, Player.transform.position.y);
 
             if (Input.GetKey(KeyCode.A))
-                Player.transform.position = new Vector3(Player.transform.position.x + -3f, Player.transform.position.y);
+                StartCoroutine(DoDodge());
+            //Player.transform.position = new Vector3(Player.transform.position.x + -3f, Player.transform.position.y);
 
             if (Input.GetKey(KeyCode.W))
-                Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 3f);
+                StartCoroutine(DoDodge());
+            //Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 3f);
 
             if (Input.GetKey(KeyCode.S))
-                Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + -3f);
+                StartCoroutine(DoDodge());
+            //Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + -3f);
 
         }
         StartCoroutine(CoolDown());
@@ -183,8 +187,9 @@ public class PlayerMoveNA : MonoBehaviour
     
     IEnumerator DoDodge()
     {
-        direction.x += 0.25f;
-        yield return new WaitForSeconds(0.5f);
+        speed += 2f;
+        yield return new WaitForSeconds(1f);
+        speed -= 2f;
     }
 
 }
