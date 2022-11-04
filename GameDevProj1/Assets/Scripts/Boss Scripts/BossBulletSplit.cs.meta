@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 043ce97b41ae31341b347d194f0ef5e8
+guid: e09d813c5ee73e044b2956861e8e80c4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - Bullet: {instanceID: 0}
-  - BossShootPoint: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

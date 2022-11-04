@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletHB : MonoBehaviour
+public class BossBulletReflect : MonoBehaviour
 {
     //public GameObject Asteroid;
     public GameObject bullet;
@@ -56,7 +56,7 @@ public class BulletHB : MonoBehaviour
         {
             direction *= new Vector2(-1, 1);//1, -1
         }
-        if (gameObject.tag == "BottomWall") 
+        if (gameObject.tag == "BottomWall")
         {
             direction *= new Vector2(1, -1);//-1, 1
         }
@@ -68,6 +68,6 @@ public class BulletHB : MonoBehaviour
         {
             direction *= new Vector2(1, -1);// -1, 1
         }
-        // Destroy(this.gameObject);
+       // Destroy(this.gameObject);
     }
 }

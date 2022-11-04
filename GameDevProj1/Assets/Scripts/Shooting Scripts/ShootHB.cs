@@ -27,7 +27,7 @@ public class ShootHB : MonoBehaviour
             go.transform.position = shootPoint.transform.position;
             go.transform.rotation = shootPoint.transform.rotation;
             BulletHB b = go.GetComponent<BulletHB>();
-            b.speed = 10;
+            b.speed = 20;
 
             StartCoroutine(CoolDown());
         }

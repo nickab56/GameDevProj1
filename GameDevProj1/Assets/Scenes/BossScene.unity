@@ -302,8 +302,9 @@ GameObject:
   - component: {fileID: 595936169}
   - component: {fileID: 595936168}
   - component: {fileID: 595936170}
+  - component: {fileID: 595936171}
   m_Layer: 0
-  m_Name: Square (12)
+  m_Name: TopWall
   m_TagString: TopWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,6 +403,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &595936171
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595936167}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &624441202
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,8 +832,9 @@ GameObject:
   - component: {fileID: 1250410110}
   - component: {fileID: 1250410109}
   - component: {fileID: 1250410111}
+  - component: {fileID: 1250410112}
   m_Layer: 0
-  m_Name: Square (11)
+  m_Name: RightWall
   m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,6 +933,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1250410112
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250410108}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1330725102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,8 +1127,9 @@ GameObject:
   - component: {fileID: 1387988745}
   - component: {fileID: 1387988744}
   - component: {fileID: 1387988746}
+  - component: {fileID: 1387988747}
   m_Layer: 0
-  m_Name: Square (8)
+  m_Name: BottomWall
   m_TagString: BottomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1183,6 +1228,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1387988747
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387988743}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1525517007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,8 +1344,9 @@ GameObject:
   - component: {fileID: 1529544640}
   - component: {fileID: 1529544639}
   - component: {fileID: 1529544641}
+  - component: {fileID: 1529544642}
   m_Layer: 0
-  m_Name: Square (9)
+  m_Name: BottomWall
   m_TagString: BottomWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,6 +1445,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1529544642
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529544638}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1714928979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1446,8 +1534,9 @@ GameObject:
   - component: {fileID: 1972349803}
   - component: {fileID: 1972349802}
   - component: {fileID: 1972349804}
+  - component: {fileID: 1972349805}
   m_Layer: 0
-  m_Name: Square (10)
+  m_Name: LeftWall
   m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1546,6 +1635,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1972349805
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972349801}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &3391109168718762684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1603,6 +1713,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbbaf9617879c334bb9309a59471ccbd, type: 3}
+--- !u!1 &3391109168718762685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5162051298021897231, guid: cbbaf9617879c334bb9309a59471ccbd, type: 3}
+  m_PrefabInstance: {fileID: 3391109168718762684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3391109168718762686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3391109168718762685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8fcfe4a87436940878d0400814f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3391109168718762685}
+  direction: {x: 0, y: 0}
+  speed: 20
 --- !u!1001 &4828503918201875952
 PrefabInstance:
   m_ObjectHideFlags: 0

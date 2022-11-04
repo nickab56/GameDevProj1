@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class BossShootHB : MonoBehaviour
 {
-    public GameObject Bullet;     //BossBullet   reflections, split, spread
-    public GameObject BossShootPoint;  
+    public GameObject BossBulletReflect;     //BossBullet   reflections, split, spread
+    public GameObject BossShootPoint;
     public float coolDownTime = 1f;
+    //public float speed = 5;
 
     private bool inCoolDown = false;
 
@@ -23,11 +24,11 @@ public class BossShootHB : MonoBehaviour
         {
             inCoolDown = true;
 
-            GameObject go = Instantiate(Bullet);   //BossBullets
+            GameObject go = Instantiate(BossBulletReflect);   //BossBullets
             //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
             go.transform.position = BossShootPoint.transform.position;
             go.transform.rotation = BossShootPoint.transform.rotation;
-            BulletHB b = go.GetComponent<BulletHB>();  //BossBullets
+            BossBulletReflect b = go.GetComponent<BossBulletReflect>();  //BossBullets
             b.speed = 7;
 
             StartCoroutine(CoolDown());
