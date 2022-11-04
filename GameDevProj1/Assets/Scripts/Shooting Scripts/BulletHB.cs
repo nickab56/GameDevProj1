@@ -52,10 +52,22 @@ public class BulletHB : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
-        if (gameObject.tag == "Wall")
+        if (gameObject.tag == "TopWall")
         {
-            direction *= new Vector2(1, -1);
+            direction *= new Vector2(-1, 1);//1, -1
         }
-       // Destroy(this.gameObject);
+        if (gameObject.tag == "BottomWall") 
+        {
+            direction *= new Vector2(1, -1);//-1, 1
+        }
+        if (gameObject.tag == "RightWall")
+        {
+            direction *= new Vector2(-1, 1);//1, -1
+        }
+        if (gameObject.tag == "LeftWall")
+        {
+            direction *= new Vector2(1, -1);// -1, 1
+        }
+        // Destroy(this.gameObject);
     }
 }

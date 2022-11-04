@@ -13,6 +13,10 @@ TagManager:
   - Boundary
   - Heart1
   - BossShootPoint
+  - LeftWall
+  - RightWall
+  - TopWall
+  - BottomWall
   layers:
   - Default
   - TransparentFX
