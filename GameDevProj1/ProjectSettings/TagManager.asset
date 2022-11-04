@@ -17,6 +17,11 @@ TagManager:
   - RightWall
   - TopWall
   - BottomWall
+  - BossBullet
+  - BossBulletR
+  - BossBulletSlpit
+  - BossBulletReflect
+  - BossBulletSpread
   layers:
   - Default
   - TransparentFX
