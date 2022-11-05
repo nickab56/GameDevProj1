@@ -11,7 +11,7 @@ public class BulletHB : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, 2);
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class BulletHB : MonoBehaviour
         //{
             //direction *= new Vector2(1, -1);
         //}
-        Vector3 newPosition = new Vector3(5 * transform.up.x * Time.deltaTime, 5 * transform.up.y * Time.deltaTime, 0);
+        Vector3 newPosition = new Vector3(speed * transform.up.x * Time.deltaTime, speed * transform.up.y * Time.deltaTime, 0);
         this.transform.position += newPosition;
     }
 

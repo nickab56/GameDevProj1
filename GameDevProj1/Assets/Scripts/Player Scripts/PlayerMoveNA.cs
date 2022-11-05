@@ -9,17 +9,17 @@ public class PlayerMoveNA : MonoBehaviour
         public Vector2 direction;
     public float halfHeight = 64; //this depends on our texture size
     public float halfWidth = 64; // this depends on your texture size
-    public float coolDownTime = 0.1f;
+    public float coolDownTime = 6f;
     public GameObject Player;
 
     private float localSpeed = 0;
-    private bool inCoolDown = false;
+    public bool inCoolDown = false;
 
-    // stop player at boundary
-    public bool blockMovingUp = false;
-    public bool blockMovingDown = false;
-    public bool blockMovingRight = false;
-    public bool blockMovingLeft = false;
+    //// stop player at boundary
+    //public bool blockMovingUp = false;
+    //public bool blockMovingDown = false;
+    //public bool blockMovingRight = false;
+    //public bool blockMovingLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -61,34 +61,34 @@ public class PlayerMoveNA : MonoBehaviour
         //    blockMovingDown = true;
         //}
 
-        if (Input.GetKey(KeyCode.W) && !blockMovingUp || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             direction.y = 1;
             localSpeed += speed;
-            blockMovingDown = false;
+            //blockMovingDown = false;
         }
 
-        if (Input.GetKey(KeyCode.D) && !blockMovingRight || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D)  || Input.GetKey(KeyCode.RightArrow))
         {
             direction.x = 1;
             localSpeed += speed;
-            blockMovingLeft = false;
+            //blockMovingLeft = false;
         }
 
 
 
-        if (Input.GetKey(KeyCode.S) && !blockMovingDown || Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             direction.y = -1;
             localSpeed += speed;
-            blockMovingUp = false;
+            //blockMovingUp = false;
         }
 
-        if (Input.GetKey(KeyCode.A) && !blockMovingLeft || Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             direction.x = -1;
             localSpeed += speed;
-            blockMovingRight = false;
+            //blockMovingRight = false;
         }
 
         if (direction != Vector2.zero)
@@ -129,67 +129,80 @@ public class PlayerMoveNA : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject gameObject = collision.gameObject;
-        Debug.Log(gameObject.tag);
-        if (gameObject.tag == "Boundary")
-        {
-            if(collision.transform.position.x < this.transform.position.x)
-            {
-                blockMovingLeft = true;
-            }
-            if (collision.transform.position.x > this.transform.position.x)
-            {
-                blockMovingRight = true;
-            }
-            if (collision.transform.position.y < this.transform.position.y)
-            {
-                blockMovingDown = true;
-            }
-            if (collision.transform.position.y > this.transform.position.y)
-            {
-                blockMovingUp = true;
-            }
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    GameObject gameObject = collision.gameObject;
+    //    Debug.Log(gameObject.tag);
+    //    if (gameObject.tag == "Boundary")
+    //    {
+    //        if(collision.transform.position.x < this.transform.position.x)
+    //        {
+    //            blockMovingLeft = true;
+    //        }
+    //        if (collision.transform.position.x > this.transform.position.x)
+    //        {
+    //            blockMovingRight = true;
+    //        }
+    //        if (collision.transform.position.y < this.transform.position.y)
+    //        {
+    //            blockMovingDown = true;
+    //        }
+    //        if (collision.transform.position.y > this.transform.position.y)
+    //        {
+    //            blockMovingUp = true;
+    //        }
+    //    }
+    //}
     
     private void dodge()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && !inCoolDown)
         {
             if (Input.GetKey(KeyCode.D))
+            {
+                inCoolDown = true;
                 StartCoroutine(DoDodge());
+            }
+                
             //Player.transform.position = new Vector3(Player.transform.position.x + 3f, Player.transform.position.y);
 
             if (Input.GetKey(KeyCode.A))
+            {
+                inCoolDown = true;
                 StartCoroutine(DoDodge());
+            }
+                
             //Player.transform.position = new Vector3(Player.transform.position.x + -3f, Player.transform.position.y);
 
             if (Input.GetKey(KeyCode.W))
+            {
+                inCoolDown = true;
                 StartCoroutine(DoDodge());
+            }
             //Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 3f);
 
             if (Input.GetKey(KeyCode.S))
+            {
+                inCoolDown = true;
                 StartCoroutine(DoDodge());
+            }
             //Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + -3f);
-
         }
-        StartCoroutine(CoolDown());
     }
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(coolDownTime);
+        yield return new WaitForSeconds(1.5f);
         inCoolDown = false;
 
     }
     
     IEnumerator DoDodge()
     {
-        speed += 2f;
-        yield return new WaitForSeconds(1f);
-        speed -= 2f;
+        StartCoroutine(CoolDown());
+        speed += 8f;
+        yield return new WaitForSeconds(0.5f);
+        speed -= 8f;
     }
 
 }
