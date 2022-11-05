@@ -19,7 +19,7 @@ public class InstantiateBossSceneNA : MonoBehaviour
         Boss = Instantiate(Boss);
         Boss.transform.position = Vector3.zero;
         Player = Instantiate(Player);
-        Player.transform.position = new Vector3(0, -65, 0);
+        Player.transform.position = new Vector3(0, -20, 0);
 
         //CreateLevel();      
     }

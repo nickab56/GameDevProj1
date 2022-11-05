@@ -14,6 +14,6 @@ public class SplashManagerNA : MonoBehaviour
     IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(5);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("BossScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TutorialScene");
     }
 }
