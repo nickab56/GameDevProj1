@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class ShootHB : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class ShootHB : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !inCoolDown)
         {
+
             inCoolDown = true;
 
             GameObject go = Instantiate(Bullet);
@@ -38,5 +41,6 @@ public class ShootHB : MonoBehaviour
         yield return new WaitForSeconds(coolDownTime);
         inCoolDown = false;
     }
+
 }
 

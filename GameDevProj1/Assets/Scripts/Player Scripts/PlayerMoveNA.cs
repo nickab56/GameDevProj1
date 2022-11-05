@@ -15,6 +15,8 @@ public class PlayerMoveNA : MonoBehaviour
     private float localSpeed = 0;
     public bool inCoolDown = false;
 
+    ParticleSystem trailFx;
+
     //// stop player at boundary
     //public bool blockMovingUp = false;
     //public bool blockMovingDown = false;
@@ -24,7 +26,8 @@ public class PlayerMoveNA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // direction = new Vector2(1, 0);
+        trailFx = GetComponent<ParticleSystem>();
+        trailFx.Stop();
     }
 
     // Update is called once per frame
@@ -65,6 +68,7 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = 1;
             localSpeed += speed;
+            StartCoroutine(PlayParticles());
             //blockMovingDown = false;
         }
 
@@ -203,6 +207,13 @@ public class PlayerMoveNA : MonoBehaviour
         speed += 8f;
         yield return new WaitForSeconds(0.5f);
         speed -= 8f;
+    }
+
+    IEnumerator PlayParticles()
+    {
+        trailFx.Play();
+        yield return new WaitForSeconds(0.785f);
+        trailFx.Stop();
     }
 
 }
