@@ -10,6 +10,8 @@ public class ShootHB : MonoBehaviour
     public GameObject shootPoint;
     public float coolDownTime = 0.5f;
 
+    public ParticleSystem shootPS;
+
     private bool inCoolDown = false;
 
     void Start()
@@ -24,6 +26,8 @@ public class ShootHB : MonoBehaviour
         {
 
             inCoolDown = true;
+
+            shootPS.Play();
 
             GameObject go = Instantiate(Bullet);
             //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
