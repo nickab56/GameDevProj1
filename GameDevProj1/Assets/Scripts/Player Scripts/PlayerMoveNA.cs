@@ -15,19 +15,13 @@ public class PlayerMoveNA : MonoBehaviour
     private float localSpeed = 0;
     public bool inCoolDown = false;
 
-    ParticleSystem trailFx;
+    public ParticleSystem walkPS;
 
-    //// stop player at boundary
-    //public bool blockMovingUp = false;
-    //public bool blockMovingDown = false;
-    //public bool blockMovingRight = false;
-    //public bool blockMovingLeft = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        trailFx = GetComponent<ParticleSystem>();
-        trailFx.Stop();
+        //walkPS = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -44,39 +38,19 @@ public class PlayerMoveNA : MonoBehaviour
 
         Vector2 currentPosition = Camera.main.WorldToScreenPoint(this.transform.position);
 
-        //if ((currentPosition.x + halfWidth) > Screen.width)
-        //{
-        //    blockMovingRight = true;
-        //}
-
-        //if ((currentPosition.y + halfHeight) > Screen.height)
-        //{
-        //    blockMovingUp = true;
-        //}
-
-        //if ((currentPosition.x - halfWidth) < 0)
-        //{
-        //    blockMovingLeft = true;
-        //}
-
-        //if ((currentPosition.y - halfHeight) < 0)
-        //{
-        //    blockMovingDown = true;
-        //}
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             direction.y = 1;
             localSpeed += speed;
-            StartCoroutine(PlayParticles());
-            //blockMovingDown = false;
+            WalkTrail();
         }
+
 
         if (Input.GetKey(KeyCode.D)  || Input.GetKey(KeyCode.RightArrow))
         {
             direction.x = 1;
             localSpeed += speed;
-            //blockMovingLeft = false;
         }
 
 
@@ -85,14 +59,12 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = -1;
             localSpeed += speed;
-            //blockMovingUp = false;
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             direction.x = -1;
             localSpeed += speed;
-            //blockMovingRight = false;
         }
 
         if (direction != Vector2.zero)
@@ -126,37 +98,8 @@ public class PlayerMoveNA : MonoBehaviour
         Vector3 newPositiion = new Vector3(localSpeed * direction.x * Time.deltaTime, localSpeed * direction.y * Time.deltaTime, 0); // could also use constructor and set each
         this.transform.position += newPositiion;
 
-        /*blockMovingUp = false;
-        blockMovingLeft = false;
-        blockMovingDown = false;
-        blockMovingRight = false;*/
-
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    GameObject gameObject = collision.gameObject;
-    //    Debug.Log(gameObject.tag);
-    //    if (gameObject.tag == "Boundary")
-    //    {
-    //        if(collision.transform.position.x < this.transform.position.x)
-    //        {
-    //            blockMovingLeft = true;
-    //        }
-    //        if (collision.transform.position.x > this.transform.position.x)
-    //        {
-    //            blockMovingRight = true;
-    //        }
-    //        if (collision.transform.position.y < this.transform.position.y)
-    //        {
-    //            blockMovingDown = true;
-    //        }
-    //        if (collision.transform.position.y > this.transform.position.y)
-    //        {
-    //            blockMovingUp = true;
-    //        }
-    //    }
-    //}
     
     private void dodge()
     {
@@ -167,8 +110,7 @@ public class PlayerMoveNA : MonoBehaviour
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
             }
-                
-            //Player.transform.position = new Vector3(Player.transform.position.x + 3f, Player.transform.position.y);
+               
 
             if (Input.GetKey(KeyCode.A))
             {
@@ -176,21 +118,20 @@ public class PlayerMoveNA : MonoBehaviour
                 StartCoroutine(DoDodge());
             }
                 
-            //Player.transform.position = new Vector3(Player.transform.position.x + -3f, Player.transform.position.y);
 
             if (Input.GetKey(KeyCode.W))
             {
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
             }
-            //Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 3f);
+
 
             if (Input.GetKey(KeyCode.S))
             {
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
             }
-            //Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + -3f);
+
         }
     }
 
@@ -209,11 +150,9 @@ public class PlayerMoveNA : MonoBehaviour
         speed -= 8f;
     }
 
-    IEnumerator PlayParticles()
+    void WalkTrail()
     {
-        trailFx.Play();
-        yield return new WaitForSeconds(0.785f);
-        trailFx.Stop();
+        walkPS.Play();
     }
 
 }
