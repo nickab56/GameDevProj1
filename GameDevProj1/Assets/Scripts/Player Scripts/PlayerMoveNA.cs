@@ -92,6 +92,16 @@ public class PlayerMoveNA : MonoBehaviour
             localSpeed *= .75f;
         }
 
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+        {
+            localSpeed *= .75f;
+        }
+
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        {
+            localSpeed *= .75f;
+        }
+
 
         Mathf.Clamp(localSpeed, 0, 4);
         localSpeed = Mathf.Lerp(localSpeed, 0, 0.4f);

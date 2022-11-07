@@ -9,6 +9,8 @@ public class BulletHB : MonoBehaviour
     public Vector2 direction;
     public float speed = 20f;
 
+    public ParticleSystem ImpactPS;
+
     void Start()
     {
         Destroy(this.gameObject, 2);
@@ -69,5 +71,12 @@ public class BulletHB : MonoBehaviour
             direction *= new Vector2(1, -1);// -1, 1
         }
         // Destroy(this.gameObject);
+
+        if (gameObject.tag == "Boundary")
+        {
+            //ImpactPS.Play();
+            //speed = 0f;
+            Destroy(this.gameObject);
+        }
     }
 }
