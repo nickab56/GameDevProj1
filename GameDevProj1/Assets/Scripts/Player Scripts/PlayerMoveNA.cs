@@ -51,6 +51,7 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.x = 1;
             localSpeed += speed;
+            WalkTrail();
         }
 
 
@@ -59,12 +60,14 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = -1;
             localSpeed += speed;
+            WalkTrail();
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             direction.x = -1;
             localSpeed += speed;
+            WalkTrail();
         }
 
         if (direction != Vector2.zero)
