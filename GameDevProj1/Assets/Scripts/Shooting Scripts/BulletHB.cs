@@ -11,9 +11,11 @@ public class BulletHB : MonoBehaviour
 
     public ParticleSystem ImpactPS;
 
+    private Vector3 BulletPosition;
+
     void Start()
     {
-        Destroy(this.gameObject, 2);
+        
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class BulletHB : MonoBehaviour
     {
 
         Move();
+        BulletPosition = this.transform.position;
 
     }
     private void Move()
@@ -75,7 +78,13 @@ public class BulletHB : MonoBehaviour
         if (gameObject.tag == "Boundary")
         {
             //ImpactPS.Play();
-            //speed = 0f;
+            speed = 0f;
+            ImpactPS = Instantiate(ImpactPS);
+            ImpactPS.transform.position = BulletPosition;
+            var euler = transform.eulerAngles;
+            euler.z = bullet.transform.rotation.eulerAngles.z;
+            ImpactPS.transform.eulerAngles = euler;
+            ImpactPS.Play();
             Destroy(this.gameObject);
         }
     }
