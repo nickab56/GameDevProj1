@@ -11,7 +11,7 @@ public class BossBulletReflect : MonoBehaviour
 
     void Start()
     {
-        Destroy(this.gameObject, 5);
+        //Destroy(this.gameObject, 5);
     }
 
     // Update is called once per frame
