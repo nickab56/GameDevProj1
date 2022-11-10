@@ -22,6 +22,7 @@ TagManager:
   - BossBulletSlpit
   - BossBulletReflect
   - BossBulletSpread
+  - TutorialBoundary
   layers:
   - Default
   - TransparentFX

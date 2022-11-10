@@ -78,7 +78,7 @@ public class BulletHB : MonoBehaviour
         if (gameObject.tag == "Boundary")
         {
             //ImpactPS.Play();
-            speed = 0f;
+            //speed = 0f;
             ImpactPS = Instantiate(ImpactPS);
             ImpactPS.transform.position = BulletPosition;
             var euler = transform.eulerAngles;
@@ -86,6 +86,18 @@ public class BulletHB : MonoBehaviour
             ImpactPS.transform.eulerAngles = euler;
             ImpactPS.Play();
             Destroy(this.gameObject);
+        }
+
+        if (gameObject.tag == "TutorialBoundary")
+        {
+            ImpactPS = Instantiate(ImpactPS);
+            ImpactPS.transform.position = BulletPosition;
+            var euler = transform.eulerAngles;
+            euler.z = bullet.transform.rotation.eulerAngles.z;
+            ImpactPS.transform.eulerAngles = euler;
+            ImpactPS.Play();
+            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
