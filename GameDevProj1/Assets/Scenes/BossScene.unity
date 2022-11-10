@@ -1267,6 +1267,8 @@ MonoBehaviour:
   bullet: {fileID: 3391109168718762685}
   direction: {x: 0, y: 0}
   speed: 20
+  originalObject: {fileID: 0}
+  reflectedObject: {fileID: 0}
 --- !u!1001 &4828503918201875952
 PrefabInstance:
   m_ObjectHideFlags: 0

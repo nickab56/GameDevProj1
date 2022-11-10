@@ -14,8 +14,10 @@ public class PlayerMoveNA : MonoBehaviour
 
     private float localSpeed = 0;
     public bool inCoolDown = false;
+    public bool walkInCoolDown = false;
 
     public ParticleSystem walkPS;
+    public ParticleSystem dodgePS;
 
 
     // Start is called before the first frame update
@@ -43,7 +45,8 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = 1;
             localSpeed += speed;
-            WalkTrail();
+            WalkEffect();
+            //WalkTrail();
         }
 
 
@@ -159,13 +162,35 @@ public class PlayerMoveNA : MonoBehaviour
     {
         StartCoroutine(CoolDown());
         speed += 8f;
+        dodgePS.Play();
         yield return new WaitForSeconds(0.5f);
         speed -= 8f;
+        //dodgePS.Stop();
     }
 
     void WalkTrail()
     {
         walkPS.Play();
+    }
+
+    IEnumerator WalkCoolDown()
+    {
+        yield return new WaitForSeconds(0.75f);
+        inCoolDown = false;
+
+    }
+
+
+    void WalkEffect()
+    {
+        StartCoroutine(WalkCoolDown());
+        
+        if (!walkInCoolDown)
+        {
+            walkPS.Play();
+            walkInCoolDown = true;
+        }
+
     }
 
 }
