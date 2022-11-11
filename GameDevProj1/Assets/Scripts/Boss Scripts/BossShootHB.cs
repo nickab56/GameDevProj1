@@ -41,4 +41,3 @@ public class BossShootHB : MonoBehaviour
         inCoolDown = false;
     }
 }
-
