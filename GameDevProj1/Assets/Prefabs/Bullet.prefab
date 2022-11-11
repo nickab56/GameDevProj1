@@ -104,6 +104,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   speed: 12
   ImpactPS: {fileID: 3207885117071907452}
+  BossImpactPS: {fileID: 4118975180940846938, guid: 59afd25946c66bd419c5d24a2b0a8bb6, type: 3}
 --- !u!50 &-164922897811525591
 Rigidbody2D:
   serializedVersion: 4

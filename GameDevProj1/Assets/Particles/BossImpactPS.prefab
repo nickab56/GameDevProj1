@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4118975180940846938}
   - component: {fileID: 7727003579344820191}
   m_Layer: 0
-  m_Name: ImpactPS
+  m_Name: BossImpactPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.20135275, g: 0.8383018, b: 0.9528302, a: 1}
+      maxColor: {r: 0.32156864, g: 0.9529412, b: 0.20784314, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -601,7 +601,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 500
+    maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -867,7 +867,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1543,7 +1543,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -4.73
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1596,7 +1596,7 @@ ParticleSystem:
     z:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -5.22
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2070,7 +2070,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0

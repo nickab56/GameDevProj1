@@ -54,7 +54,8 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.x = 1;
             localSpeed += speed;
-            WalkTrail();
+            WalkEffect();
+            //WalkTrail();
         }
 
 
@@ -63,14 +64,16 @@ public class PlayerMoveNA : MonoBehaviour
         {
             direction.y = -1;
             localSpeed += speed;
-            WalkTrail();
+            WalkEffect();
+            //WalkTrail();
         }
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             direction.x = -1;
             localSpeed += speed;
-            WalkTrail();
+            WalkEffect();
+           // WalkTrail();
         }
 
         if (direction != Vector2.zero)
@@ -176,19 +179,18 @@ public class PlayerMoveNA : MonoBehaviour
     IEnumerator WalkCoolDown()
     {
         yield return new WaitForSeconds(0.75f);
-        inCoolDown = false;
+        walkInCoolDown = false;
 
     }
 
 
     void WalkEffect()
     {
-        StartCoroutine(WalkCoolDown());
-        
         if (!walkInCoolDown)
         {
-            walkPS.Play();
             walkInCoolDown = true;
+            walkPS.Play();
+            StartCoroutine(WalkCoolDown());
         }
 
     }

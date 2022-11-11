@@ -10,6 +10,7 @@ public class BulletHB : MonoBehaviour
     public float speed = 20f;
 
     public ParticleSystem ImpactPS;
+    public ParticleSystem BossImpactPS;
 
     private Vector3 BulletPosition;
 
@@ -98,6 +99,20 @@ public class BulletHB : MonoBehaviour
             ImpactPS.Play();
             Destroy(this.gameObject);
             Destroy(gameObject);
+        }
+
+        if (gameObject.tag == "Boss")
+        {
+            BossImpactPS = Instantiate(BossImpactPS);
+            BossImpactPS.transform.position = BulletPosition;
+            var euler = transform.eulerAngles;
+            euler.z = bullet.transform.rotation.eulerAngles.z;
+            BossImpactPS.transform.eulerAngles = euler;
+
+            BossImpactPS.main.startRotation.Equals(bullet.transform.rotation);
+
+            BossImpactPS.Play();
+            Destroy(this.gameObject);
         }
     }
 }
