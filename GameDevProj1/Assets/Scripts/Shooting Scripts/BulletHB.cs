@@ -29,26 +29,9 @@ public class BulletHB : MonoBehaviour
     }
     private void Move()
     {
-        //float halfHeight = 60.5f;
-        //float halfWidth = 60.5f;
+
         Vector2 currentPosition = Camera.main.WorldToScreenPoint(this.transform.position);
 
-        //if ((currentPosition.x + halfWidth) > Screen.width)//right
-        //{
-            //direction *= new Vector2(-1, 1);
-        //}
-        //if ((-currentPosition.x + halfWidth) > Screen.width - Screen.width)//left
-        //{
-            //direction *= new Vector2(-1, 1);
-        //}
-        //if ((currentPosition.y + halfHeight) > Screen.height)//top
-        //{
-            //direction *= new Vector2(1, -1);
-        //}
-        //if ((-currentPosition.y + halfHeight) > Screen.height - Screen.height)//bottom
-        //{
-            //direction *= new Vector2(1, -1);
-        //}
         Vector3 newPosition = new Vector3(speed * transform.up.x * Time.deltaTime, speed * transform.up.y * Time.deltaTime, 0);
         this.transform.position += newPosition;
     }
@@ -58,23 +41,6 @@ public class BulletHB : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
-        if (gameObject.tag == "TopWall")
-        {
-            direction *= new Vector2(-1, 1);//1, -1
-        }
-        if (gameObject.tag == "BottomWall") 
-        {
-            direction *= new Vector2(1, -1);//-1, 1
-        }
-        if (gameObject.tag == "RightWall")
-        {
-            direction *= new Vector2(-1, 1);//1, -1
-        }
-        if (gameObject.tag == "LeftWall")
-        {
-            direction *= new Vector2(1, -1);// -1, 1
-        }
-        // Destroy(this.gameObject);
 
         if (gameObject.tag == "Boundary")
         {

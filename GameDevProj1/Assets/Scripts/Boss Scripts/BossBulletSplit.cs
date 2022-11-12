@@ -37,7 +37,6 @@ public class BossBulletSplit : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Bullet = Instantiate(SplitBullet);
-        //Bullet.GetComponent<BossSplitBulletNA>();
 
         Bullet.transform.position = this.transform.position;
         var euler = transform.eulerAngles;
@@ -47,6 +46,33 @@ public class BossBulletSplit : MonoBehaviour
         var euler2 = transform.eulerAngles;
         euler2.z = this.transform.localEulerAngles.z - 25;
         this.transform.eulerAngles = euler2;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject gameObject = collision.gameObject;
+
+        if (gameObject.tag == "Boundary")
+        {
+            //ImpactPS.Play();
+            //speed = 0f;
+            Destroy(this.gameObject);
+        }
+
+        if (gameObject.tag == "Player")
+        {
+            //BossImpactPS = Instantiate(BossImpactPS);
+            //BossImpactPS.transform.position = BulletPosition;
+            //var euler = transform.eulerAngles;
+            //euler.z = bullet.transform.rotation.eulerAngles.z;
+            //BossImpactPS.transform.eulerAngles = euler;
+
+            //BossImpactPS.main.startRotation.Equals(bullet.transform.rotation);
+
+            //BossImpactPS.Play();
+            Destroy(this.gameObject);
+            
+        }
     }
 
 
