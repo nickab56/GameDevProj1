@@ -5,18 +5,15 @@ using TMPro;
 
 public class PlayerHealthSystemJA : MonoBehaviour
 {
-
-    public int health = 3;
     public int lives = 3;
     public GameObject heart3;
     public GameObject heart2;
-    public TMP_Text healthText;
 
     private bool inCoolDown = false;
 
     void Start()
     {
-        healthText.text = "Health: 3";
+
     }
 
     void Update()
@@ -32,29 +29,24 @@ public class PlayerHealthSystemJA : MonoBehaviour
             {
                 StartCoroutine(CoolDown());
                 inCoolDown = true;
-                health--;
-                healthText.text = "Health: " + health.ToString();
-                Debug.Log("Health" + health);
                 Debug.Log("Lives" + lives);
-                if (health == 0)
-                {
-                    lives = lives - 1;
-                    health = 3;
-                }
+                
+                lives = lives - 1;
                 if (lives == 2)
                 {
                     Destroy(heart3);
                 }
                 if (lives == 1)
                 {
-                    Destroy(heart3);
+                    Destroy(heart2);
                 }
                 if (lives == 0)
                 {
                     Debug.Log("GAME OVER");
                     //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
                 }
-                
+
+
             }
 
         }
@@ -63,7 +55,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         inCoolDown = false;
     }
 }
