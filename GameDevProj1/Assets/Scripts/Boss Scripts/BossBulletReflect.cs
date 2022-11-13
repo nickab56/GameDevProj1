@@ -9,9 +9,12 @@ public class BossBulletReflect : MonoBehaviour
     public Vector2 direction;
     public float speed = 20f;
 
+    public Transform originalObject;
+    public Transform reflectedObject;
+
     void Start()
     {
-        Destroy(this.gameObject, 5);
+        //Destroy(this.gameObject, 5);
     }
 
     // Update is called once per frame
@@ -27,22 +30,7 @@ public class BossBulletReflect : MonoBehaviour
         //float halfWidth = 60.5f;
         Vector2 currentPosition = Camera.main.WorldToScreenPoint(this.transform.position);
 
-        //if ((currentPosition.x + halfWidth) > Screen.width)//right
-        //{
-            //direction *= new Vector2(-1, 1);
-        //}
-        //if ((-currentPosition.x + halfWidth) > Screen.width - Screen.width)//left
-        //{
-            //direction *= new Vector2(-1, 1);
-        //}
-        //if ((currentPosition.y + halfHeight) > Screen.height)//top
-        //{
-            //direction *= new Vector2(1, -1);
-        //}
-        //if ((-currentPosition.y + halfHeight) > Screen.height - Screen.height)//bottom
-        //{
-            //direction *= new Vector2(1, -1);
-        //}
+
         Vector3 newPosition = new Vector3(5 * transform.up.x * Time.deltaTime, 5 * transform.up.y * Time.deltaTime, 0);
         this.transform.position += newPosition;
     }
@@ -52,9 +40,8 @@ public class BossBulletReflect : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
-        if (gameObject.tag == "TopWall")
+        if (gameObject.tag == "Boundary")
         {
-            direction *= new Vector2(-1, 1);//1, -1
         }
         if (gameObject.tag == "BottomWall")
         {

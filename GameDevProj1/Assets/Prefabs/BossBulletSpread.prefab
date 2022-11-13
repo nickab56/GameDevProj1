@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 328040152482074181}
   - component: {fileID: 4850744362431237548}
   - component: {fileID: 8495446287512972284}
+  - component: {fileID: -2563611820048562624}
   m_Layer: 0
   m_Name: BossBulletSpread
   m_TagString: BossBulletSpread
@@ -133,3 +134,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-2563611820048562624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041599348773397296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19bcf4e86e422454782af51162ae168c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpreadBullet: {fileID: 9041599348773397296, guid: f613373a12dfc07449fb857df4466bc5, type: 3}
+  direction: {x: 0, y: 0}
+  speed: 5
