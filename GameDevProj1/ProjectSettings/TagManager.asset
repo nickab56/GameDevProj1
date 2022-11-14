@@ -23,6 +23,7 @@ TagManager:
   - BossBulletReflect
   - BossBulletSpread
   - TutorialBoundary
+  - Damage
   layers:
   - Default
   - TransparentFX
