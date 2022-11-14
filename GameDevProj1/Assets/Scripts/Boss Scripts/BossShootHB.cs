@@ -23,7 +23,7 @@ public class BossShootHB : MonoBehaviour
         if (inCoolDown == false)
         {
 
-            inCoolDown = true;
+            inCoolDown = false;
             GameObject go = Instantiate(BulletSplit);
             //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
             go.transform.position = BossShootPoint.transform.position;
@@ -32,6 +32,10 @@ public class BossShootHB : MonoBehaviour
             b.speed = 5;
 
             StartCoroutine(CoolDown());
+
+            var euler = transform.eulerAngles;
+            euler.z = Random.Range(0, 360);
+            BossShootPoint.transform.eulerAngles = euler;
         }
     }
 
