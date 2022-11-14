@@ -53,7 +53,7 @@ public class BossShootHB : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(0.4f);
         inCoolDown = false;
     }
 }

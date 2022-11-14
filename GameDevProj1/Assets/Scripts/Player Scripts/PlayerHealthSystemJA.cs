@@ -23,7 +23,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
-        if (gameObject.tag == "Boss")
+        if ((gameObject.tag == "Boss") || (gameObject.tag == "BossBullet"))
         {
             if (inCoolDown == false)
             {
@@ -55,7 +55,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         inCoolDown = false;
     }
 }
