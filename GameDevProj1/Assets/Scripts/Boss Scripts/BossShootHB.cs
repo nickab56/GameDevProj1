@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class BossShootHB : MonoBehaviour
 {
-    public GameObject BulletSplit;     //BossBullet   reflections, split, spread
+    public GameObject BulletSplit;
+    public GameObject BulletBomb;
     public GameObject BossShootPoint;
-   
-    //public float speed = 5;
+    
 
     private bool inCoolDown = false;
-
+    private int temp = 0;
     void Start()
     {
 
@@ -23,14 +23,26 @@ public class BossShootHB : MonoBehaviour
         if (inCoolDown == false)
         {
 
-            inCoolDown = false;
-            GameObject go = Instantiate(BulletSplit);
-            //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
-            go.transform.position = BossShootPoint.transform.position;
-            go.transform.rotation = BossShootPoint.transform.rotation;
-            BossBulletSplit b = go.GetComponent<BossBulletSplit>();
-            b.speed = 5;
-
+            inCoolDown = true;
+            temp = Random.Range(0,2);
+            if (temp == 0)
+            {
+                GameObject go = Instantiate(BulletSplit);
+                //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
+                go.transform.position = BossShootPoint.transform.position;
+                go.transform.rotation = BossShootPoint.transform.rotation;
+                BossBulletSplit b = go.GetComponent<BossBulletSplit>();
+                b.speed = 5;
+            }
+            if (temp == 1)
+            {
+                GameObject go = Instantiate(BulletBomb);
+                //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
+                go.transform.position = BossShootPoint.transform.position;
+                go.transform.rotation = BossShootPoint.transform.rotation;
+                BossBulletSpread b = go.GetComponent<BossBulletSpread>();
+                b.speed = 5;
+            }
             StartCoroutine(CoolDown());
 
             var euler = transform.eulerAngles;
@@ -41,7 +53,7 @@ public class BossShootHB : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         inCoolDown = false;
     }
 }

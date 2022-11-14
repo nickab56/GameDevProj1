@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSplit: {fileID: 6057238340961583229, guid: 4d3a0da2ecb9b9a4587091d972f371c4, type: 3}
+  BulletBomb: {fileID: 9041599348773397296, guid: 7d14fbb0fa3309e48ac2c81a42e37bbf, type: 3}
   BossShootPoint: {fileID: 2957788521276392864}
 --- !u!1 &2957788521276392864
 GameObject:
