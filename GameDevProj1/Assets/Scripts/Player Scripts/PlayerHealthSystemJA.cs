@@ -43,7 +43,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
                 if (lives == 0)
                 {
                     Debug.Log("GAME OVER");
-                    //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+                    //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverSceneLose");
                 }
 
 

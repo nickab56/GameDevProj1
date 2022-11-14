@@ -73,7 +73,7 @@ public class BulletHB : MonoBehaviour
             BossImpactPS.transform.position = BulletPosition;
             var euler = transform.eulerAngles;
             euler.z = bullet.transform.rotation.eulerAngles.z;
-            BossImpactPS.transform.eulerAngles = euler;
+            BossImpactPS.transform.eulerAngles= euler;
 
             BossImpactPS.main.startRotation.Equals(bullet.transform.rotation);
 
