@@ -927,7 +927,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1375086903
 MonoBehaviour:
@@ -1264,11 +1264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8fcfe4a87436940878d0400814f12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3391109168718762685}
-  direction: {x: 0, y: 0}
-  speed: 20
-  originalObject: {fileID: 0}
-  reflectedObject: {fileID: 0}
 --- !u!1001 &4828503918201875952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1339,7 +1334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365300068266302501, guid: 4d3a0da2ecb9b9a4587091d972f371c4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5365300068266302501, guid: 4d3a0da2ecb9b9a4587091d972f371c4, type: 3}
       propertyPath: m_LocalPosition.x

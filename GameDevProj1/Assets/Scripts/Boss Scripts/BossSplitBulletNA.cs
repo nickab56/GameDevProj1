@@ -5,8 +5,13 @@ using UnityEngine;
 public class BossSplitBulletNA : MonoBehaviour
 {
 
+    public GameObject SplitBullet;
     public Vector2 direction;
     public float speed = 5f;
+
+    public ParticleSystem ImpactPS;
+
+    private Vector3 BulletPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +23,7 @@ public class BossSplitBulletNA : MonoBehaviour
     void Update()
     {
         Move();
+        BulletPosition = this.transform.position;
     }
 
     private void Move()
@@ -34,22 +40,24 @@ public class BossSplitBulletNA : MonoBehaviour
 
         if (gameObject.tag == "Boundary")
         {
-            //ImpactPS.Play();
-            //speed = 0f;
+            ImpactPS = Instantiate(ImpactPS);
+            ImpactPS.transform.position = BulletPosition;
+            var euler = transform.eulerAngles;
+            euler.z = SplitBullet.transform.rotation.eulerAngles.z;
+            ImpactPS.transform.eulerAngles = euler;
+            ImpactPS.Play();
             Destroy(this.gameObject);
         }
 
         if (gameObject.tag == "Player")
         {
-            //BossImpactPS = Instantiate(BossImpactPS);
-            //BossImpactPS.transform.position = BulletPosition;
-            //var euler = transform.eulerAngles;
-            //euler.z = bullet.transform.rotation.eulerAngles.z;
-            //BossImpactPS.transform.eulerAngles = euler;
+            ImpactPS = Instantiate(ImpactPS);
+            ImpactPS.transform.position = BulletPosition;
+            var euler = transform.eulerAngles;
+            euler.z = SplitBullet.transform.rotation.eulerAngles.z;
+            ImpactPS.transform.eulerAngles = euler;
+            ImpactPS.Play();
 
-            //BossImpactPS.main.startRotation.Equals(bullet.transform.rotation);
-
-            //BossImpactPS.Play();
             Destroy(this.gameObject);
 
         }
