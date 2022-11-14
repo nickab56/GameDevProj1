@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1506477950498851624}
   - component: {fileID: 5401450972740397753}
   - component: {fileID: 8210306309561508619}
+  - component: {fileID: -4972194046613822965}
   m_Layer: 0
   m_Name: BossBulletReflect
   m_TagString: BossBulletReflect
@@ -133,3 +134,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4972194046613822965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162051298021897231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8fcfe4a87436940878d0400814f12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  direction: {x: 0, y: 0}
+  speed: 20
+  originalObject: {fileID: 0}
+  reflectedObject: {fileID: 0}
