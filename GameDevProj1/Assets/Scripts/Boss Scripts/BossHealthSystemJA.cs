@@ -4,8 +4,12 @@ using UnityEngine;
 using TMPro;
 public class BossHealthSystemJA : MonoBehaviour
 {
-    public int health = 10;
+    public float health = 10;
     public TMP_Text healthText;
+
+    public RectTransform bossHealthBarTransform;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +21,15 @@ public class BossHealthSystemJA : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject gameObject = collision.gameObject;
         if (gameObject.tag == "Bullet")
         {
-            health--;
-            healthText.text = "Health: " + health.ToString();
+            health -= 1f;
+            //healthText.text = "Health: " + health.ToString();
+            ScaleHealthBar();
             if (health == 0)
             {
                 Constants.C.BossAlive = false;
@@ -33,6 +39,14 @@ public class BossHealthSystemJA : MonoBehaviour
 
         }
 
+    }
+
+    public void ScaleHealthBar()
+    {
+        //health -= amount;
+        if (health < 0)
+            health = 0;
+        bossHealthBarTransform.sizeDelta = new Vector2(health, bossHealthBarTransform.sizeDelta.y);
     }
 
 }
