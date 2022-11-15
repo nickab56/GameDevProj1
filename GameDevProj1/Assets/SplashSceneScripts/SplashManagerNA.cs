@@ -8,7 +8,7 @@ public class SplashManagerNA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(ChangeScene());
+        Constants.C.lives = 3;
     }
 
     void Update()

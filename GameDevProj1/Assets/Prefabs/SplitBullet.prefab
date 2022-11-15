@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7655146563554089414}
   m_Layer: 0
   m_Name: SplitBullet
-  m_TagString: BossBulletSlpit
+  m_TagString: BossBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 5394c65e9bc008b46bea10ca8cad6b0c, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: d9f7242459bd2364b801b93fe76e9aff, type: 3}
   m_Color: {r: 0.9339623, g: 0.7978341, b: 0.023495832, a: 1}
   m_FlipX: 0
   m_FlipY: 0

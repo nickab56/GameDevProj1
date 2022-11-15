@@ -5,7 +5,6 @@ using TMPro;
 public class BossHealthSystemJA : MonoBehaviour
 {
     public float health = 10;
-    public TMP_Text healthText;
 
     public RectTransform bossHealthBarTransform;
 
@@ -13,7 +12,7 @@ public class BossHealthSystemJA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthText.text = "Health: 10";
+        
     }
 
     // Update is called once per frame
@@ -27,7 +26,7 @@ public class BossHealthSystemJA : MonoBehaviour
         GameObject gameObject = collision.gameObject;
         if (gameObject.tag == "Bullet")
         {
-            health -= 1f;
+            health -= .4f;
             //healthText.text = "Health: " + health.ToString();
             ScaleHealthBar();
             if (health == 0)

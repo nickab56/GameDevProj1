@@ -374,6 +374,7 @@ MonoBehaviour:
   timeCount: 0
   HighTime: 0
   BossAlive: 1
+  lives: 3
 --- !u!114 &802455078
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -268,8 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f1c4a7fbcfa3647929bd27de3db1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  healthText: {fileID: 0}
+  health: 20
   bossHealthBarTransform: {fileID: 5098373360258533777}
 --- !u!114 &3726280964332817178
 MonoBehaviour:
@@ -426,7 +425,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -445.81, y: -51.93}
-  m_SizeDelta: {x: 16, y: 3}
+  m_SizeDelta: {x: 20, y: 1.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7026653167647189599
 CanvasRenderer:
@@ -502,7 +501,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -445.80997, y: -51.92999}
-  m_SizeDelta: {x: 16, y: 3}
+  m_SizeDelta: {x: 20, y: 1.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2651482065171895841
 CanvasRenderer:

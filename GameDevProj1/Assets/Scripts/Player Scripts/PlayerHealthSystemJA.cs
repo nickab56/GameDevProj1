@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerHealthSystemJA : MonoBehaviour
 {
-    public int lives = 3;
+    //public int lives = 3;
     public GameObject heart3;
     public GameObject heart2;
 
@@ -29,18 +29,18 @@ public class PlayerHealthSystemJA : MonoBehaviour
             {
                 StartCoroutine(CoolDown());
                 inCoolDown = true;
-                Debug.Log("Lives" + lives);
-                
-                lives = lives - 1;
-                if (lives == 2)
+                Debug.Log("Lives" + Constants.C.lives);
+
+                Constants.C.lives = Constants.C.lives - 1;
+                if (Constants.C.lives == 2)
                 {
                     Destroy(heart3);
                 }
-                if (lives == 1)
+                if (Constants.C.lives == 1)
                 {
                     Destroy(heart2);
                 }
-                if (lives == 0)
+                if (Constants.C.lives == 0)
                 {
                     Debug.Log("GAME OVER");
                     //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverSceneLose");
