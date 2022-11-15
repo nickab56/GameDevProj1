@@ -13,6 +13,8 @@ public class BossBulletSplit : MonoBehaviour
 
     private GameObject Bullet;
 
+    private int sTime;
+
     private Vector3 BulletPosition;
 
     // Start is called before the first frame update
@@ -39,7 +41,8 @@ public class BossBulletSplit : MonoBehaviour
 
     IEnumerator SplitTime()
     {
-        yield return new WaitForSeconds(2);
+        sTime = Random.Range(1, 5);
+        yield return new WaitForSeconds(sTime);
 
         Bullet = Instantiate(SplitBullet);
 

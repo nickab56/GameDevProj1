@@ -9,6 +9,7 @@ public class Constants : MonoBehaviour
     public bool BossAlive = true;
     public int lives = 3;
 
+
     // Start is called before the first frame update
     void Start()
     {

@@ -7,9 +7,8 @@ public class Manager : MonoBehaviour
     public float pastTime;
     public float time;
 
+    public AudioSource BossDeath;
 
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +35,7 @@ public class Manager : MonoBehaviour
 
     IEnumerator ChangeScene()
     {
+        BossDeath.PlayOneShot(BossDeath.clip, 0.5f);
         yield return new WaitForSeconds(3);
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
     }

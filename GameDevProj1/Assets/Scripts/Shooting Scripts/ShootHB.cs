@@ -12,12 +12,12 @@ public class ShootHB : MonoBehaviour
 
     public ParticleSystem shootPS;
 
-    private AudioSource fire1;
+    public AudioSource fire1;
     private bool inCoolDown = false;
 
     void Start()
     {
-        fire1 = GetComponent<AudioSource>();
+        //fire1 = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
