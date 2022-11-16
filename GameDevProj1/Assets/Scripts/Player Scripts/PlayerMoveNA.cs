@@ -81,32 +81,32 @@ public class PlayerMoveNA : MonoBehaviour
             direction.Normalize();
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+        if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow)))
         {
             localSpeed *= .75f;
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow)))
         {
             localSpeed *= .75f;
         }
 
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        if ((Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow)))
         {
             localSpeed *= .75f;
         }
 
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow)))
         {
             localSpeed *= .75f;
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+        if ((Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.DownArrow)))
         {
             localSpeed *= .75f;
         }
 
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D)) || (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.RightArrow)))
         {
             localSpeed *= .75f;
         }

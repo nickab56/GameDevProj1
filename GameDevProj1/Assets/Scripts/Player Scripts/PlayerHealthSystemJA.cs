@@ -58,7 +58,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
                         playerhurt.PlayOneShot(playerhurt.clip, 0.5f);
                     }
                     Debug.Log("GAME OVER");
-                    //UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverSceneLose");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverSceneLose");
                 }
 
 
