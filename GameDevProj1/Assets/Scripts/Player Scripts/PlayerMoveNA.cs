@@ -122,30 +122,30 @@ public class PlayerMoveNA : MonoBehaviour
     
     private void dodge()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !inCoolDown)
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) && !inCoolDown)
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
             }
                
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
             }
                 
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
             }
 
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
                 inCoolDown = true;
                 StartCoroutine(DoDodge());
