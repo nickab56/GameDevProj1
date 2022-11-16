@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBulletSplit : MonoBehaviour
+public class BossBulletSplitNA : MonoBehaviour
 {
     public GameObject SplitBullet;
     public GameObject PartentBullet;

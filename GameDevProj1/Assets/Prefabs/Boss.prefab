@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4561773079414301125}
   - component: {fileID: 4550139861558568574}
   - component: {fileID: 7272225851342099568}
-  - component: {fileID: 1240308599842314114}
   m_Layer: 5
   m_Name: HealthBarCanvas
   m_TagString: Untagged
@@ -103,20 +102,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1240308599842314114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2205483660661366336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2465358fec02cb2449e61d30786cb426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossHealthBarTransform: {fileID: 8647465298725533268}
-  currentHealth: 1
 --- !u!1 &2733329925290848465
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +259,6 @@ MonoBehaviour:
   health: 20
   bossHealthBarTransform: {fileID: 5098373360258533777}
   BossHurt: {fileID: -4372100317111734065}
-  BossDeath: {fileID: -3866857264379334234}
 --- !u!114 &3726280964332817178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043ce97b41ae31341b347d194f0ef5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletSplit: {fileID: 6057238340961583229, guid: 4d3a0da2ecb9b9a4587091d972f371c4, type: 3}
+  BulletSplitNA: {fileID: 6057238340961583229, guid: 4d3a0da2ecb9b9a4587091d972f371c4, type: 3}
   BulletBomb: {fileID: 9041599348773397296, guid: 7d14fbb0fa3309e48ac2c81a42e37bbf, type: 3}
   BossShootPoint: {fileID: 2957788521276392864}
 --- !u!82 &1655044740348621059

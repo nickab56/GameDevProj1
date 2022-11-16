@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Manager : MonoBehaviour
+public class Manager : MonoBehaviour        // Worked on by everyone so not given initials
 {
     public float pastTime;
     public float time;

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BossShootHB : MonoBehaviour
+public class BossShootNA : MonoBehaviour
 {
-    public GameObject BulletSplit;
+    public GameObject BulletSplitNA;
     public GameObject BulletBomb;
     public GameObject BossShootPoint;
     
@@ -27,11 +27,11 @@ public class BossShootHB : MonoBehaviour
             temp = Random.Range(0,2);
             if (temp == 0)
             {
-                GameObject go = Instantiate(BulletSplit);
+                GameObject go = Instantiate(BulletSplitNA);
                 //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
                 go.transform.position = BossShootPoint.transform.position;
                 go.transform.rotation = BossShootPoint.transform.rotation;
-                BossBulletSplit b = go.GetComponent<BossBulletSplit>();
+                BossBulletSplitNA b = go.GetComponent<BossBulletSplitNA>();
                 b.speed = 5;
             }
             if (temp == 1)
@@ -40,7 +40,7 @@ public class BossShootHB : MonoBehaviour
                 //go.transform.SetPositionAndRotation(shootPoint.transform.position, shootPoint.transform.rotation);
                 go.transform.position = BossShootPoint.transform.position;
                 go.transform.rotation = BossShootPoint.transform.rotation;
-                BossBulletSpread b = go.GetComponent<BossBulletSpread>();
+                BossBulletSpreadNA b = go.GetComponent<BossBulletSpreadNA>();
                 b.speed = 5;
             }
             StartCoroutine(CoolDown());

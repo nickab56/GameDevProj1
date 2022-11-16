@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBulletSpread : MonoBehaviour
+public class BossBulletSpreadNA : MonoBehaviour
 {
     public GameObject SpreadBullet;
     public Vector2 direction;
