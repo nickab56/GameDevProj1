@@ -53,6 +53,7 @@ public class PlayerHealthSystemJA : MonoBehaviour
                 }
                 if (Constants.C.lives == 0)
                 {
+                    Constants.C.PlayerAlive = false;
                     if (!playerhurt.isPlaying)
                     {
                         playerhurt.PlayOneShot(playerhurt.clip, 0.5f);

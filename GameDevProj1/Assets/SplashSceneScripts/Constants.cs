@@ -7,6 +7,7 @@ public class Constants : MonoBehaviour
     public float timeCount = 0;
     public float HighTime;
     public bool BossAlive = true;
+    public bool PlayerAlive = true;
     public int lives = 3;
 
 

@@ -36,12 +36,17 @@ public class TimerNA : MonoBehaviour
 
     private void OnDisable()
     {
-        if (time < pastTime && pastTime != 0)
+
+        if (Constants.C.PlayerAlive == true)
         {
-            PlayerPrefs.SetFloat(highScoreKey, time);
+            if (time < pastTime && pastTime != 0)
+            {
+                PlayerPrefs.SetFloat(highScoreKey, time);
+            }
+            Constants.C.timeCount = time;
+            Constants.C.HighTime = PlayerPrefs.GetFloat(highScoreKey);
         }
-        Constants.C.timeCount = time;
-        Constants.C.HighTime = PlayerPrefs.GetFloat(highScoreKey);
+
     }
 
 }
