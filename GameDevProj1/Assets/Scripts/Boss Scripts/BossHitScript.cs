@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHitScript : MonoBehaviour
 {
-    public Manager Manager;
+    public GameObject Manager;
     public BossHealthSystemJA HealthScript;
 
     public AudioSource BossHurt;
@@ -12,7 +12,7 @@ public class BossHitScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Manager = GetComponent<Manager>();
+        Manager = GameObject.FindGameObjectWithTag("Manager");
         HealthScript = Manager.GetComponent<BossHealthSystemJA>();
     }
 
