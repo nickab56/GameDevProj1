@@ -33,7 +33,6 @@ public class BossHitScript : MonoBehaviour
                 BossHurt.PlayOneShot(BossHurt.clip, 0.5f);
             }
             HealthScript.health -= .4f;
-            //healthText.text = "Health: " + health.ToString();
             HealthScript.ScaleHealthBar();
             if (HealthScript.health == 0)
             {

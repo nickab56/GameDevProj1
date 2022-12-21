@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class BossHealthSystemJA : MonoBehaviour
 {
-    public float health = 10;
+    public float health = 20;
 
     public RectTransform bossHealthBarTransform;
 
