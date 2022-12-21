@@ -8,13 +8,11 @@ public class BossHealthSystemJA : MonoBehaviour
 
     public RectTransform bossHealthBarTransform;
 
-    public AudioSource BossHurt;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -25,25 +23,11 @@ public class BossHealthSystemJA : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject gameObject = collision.gameObject;
-        if (gameObject.tag == "Bullet")
-        {
-            if (!BossHurt.isPlaying)
-            {
-                BossHurt.PlayOneShot(BossHurt.clip, 0.5f);
-            }
-            health -= .4f;
-            //healthText.text = "Health: " + health.ToString();
-            ScaleHealthBar();
-            if (health == 0)
-            {
-                
-                Constants.C.BossAlive = false;
-                Destroy(this.gameObject);
-            }
-            Destroy(gameObject);
+        
+    }
 
-        }
+    void BossHit()
+    {
 
     }
 
